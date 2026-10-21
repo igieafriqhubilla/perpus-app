@@ -31,25 +31,24 @@ class BookController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        $validated = $request->validate([
-            'kode_buku' => 'required|unique:books',
-            'judul'     => 'required|max:255',
-            'pengarang' => 'required|max:255',
-            'penerbit'  => 'nullable|max:255',
-            'tahun'     => 'nullable|digits:4',
-            'stok'      => 'required|integer|min:0',
-        ], [
-            'stok.required' => 'Stok wajib diisi.',
-            'stok.integer'  => 'Stok harus berupa bilangan bulat.',
-            'stok.min'      => 'Stok tidak boleh bernilai negatif.',
-        ]);
+{
+    $validated = $request->validate([
+        'kode_buku' => 'required|unique:books',
+        'judul'     => 'required|max:255',
+        'pengarang' => 'required|max:255',
+        'penerbit'  => 'nullable|max:255',
+        'tahun'     => 'nullable|digits:4',
+        'stok'      => 'required|integer|min:0',
+    ], [
+        'stok.required' => 'Stok wajib diisi.',
+        'stok.integer'  => 'Stok harus berupa bilangan bulat.',
+        'stok.min'      => 'Stok tidak boleh bernilai negatif.',
+    ]);
 
-        Book::create($validated);
+    Book::create($validated);
 
-        return redirect()->route('books.index')->with('success', 'Buku berhasil ditambahkan');
-    }
-
+    return redirect()->route('books.index')->with('success', 'Buku berhasil ditambahkan');
+}
     /**
      * Display the specified resource.
      */

@@ -33,14 +33,18 @@ function submit() {
             <input v-model="form.pengarang" type="text">
             <span v-if="form.errors.pengarang">{{ form.errors.pengarang }}</span>
 
+            
             <label>Penerbit</label>
             <input v-model="form.penerbit" type="text">
+            <span v-if="form.errors.penerbit">{{ form.errors.penerbit }}</span>
 
             <label>Tahun</label>
             <input v-model="form.tahun" type="text">
+            <span v-if="form.errors.tahun">{{ form.errors.tahun }}</span>
 
-            <label>Stok</label>
-            <input v-model="form.stok" type="number">
+            <input v-model="form.stok" type="number" min="0">
+            <span v-if="form.errors.stok">{{ form.errors.stok }}</span>
+
 
             <button type="submit">Simpan</button>
         </form>
