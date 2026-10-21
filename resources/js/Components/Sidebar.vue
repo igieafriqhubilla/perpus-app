@@ -1,4 +1,3 @@
-
 <script setup>
 import { Link } from '@inertiajs/vue3';
 </script>
@@ -18,7 +17,8 @@ import { Link } from '@inertiajs/vue3';
                 Beranda
             </Link>
 
-            <Link href="/" class="block hover:text-gray-300">
+            <!-- Baris baru (Langkah 8): menu menuju daftar buku, href harus sama dengan Route::resource pada Langkah 3 -->
+            <Link href="/books" class="block hover:text-gray-300">
                 Data Buku
             </Link>
 
