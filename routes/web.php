@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\MemberController; 
 use App\Http\Controllers\ProfileController;
 
 Route::get('/', [HomeController::class, 'index']);
@@ -19,7 +20,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
+    Route::resource('members', MemberController::class);
     Route::resource('books', BookController::class);
 });
 

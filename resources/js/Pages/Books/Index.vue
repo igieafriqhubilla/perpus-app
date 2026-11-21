@@ -27,7 +27,11 @@ function hapus(id) {
         <h1>Data Buku</h1>
 
         <div v-if="$page.props.flash.success">
-            {{ $page.props.flash.success }}
+        {{ $page.props.flash.success }}
+         </div>
+
+        <div v-if="$page.props.flash.error">
+        {{ $page.props.flash.error }}
         </div>
 
         <Link href="/books/create">+ Tambah Buku</Link>

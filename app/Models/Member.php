@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Member extends Model
 {
-    protected $fillable = [
-        'nama',
-        'nis_nim',
-        'no_hp',
-        'alamat',
+        protected $fillable = [ 
+    'nama', 
+    'nis_nim', 
+    'no_hp', 
+    'foto', // baris baru: mengizinkan kolom foto diisi 
     ];
 
     public function loans(): HasMany
